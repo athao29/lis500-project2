@@ -1,12 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size: large;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: #171926;
+    color: white;
 }
 
 header {
-    background: url('image/homepage.jpg') no-repeat center center/cover;
+    background: url('image/banner.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 100px 20px;
@@ -18,6 +20,35 @@ header h1 {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+
+nav {
+    text-align: center;
+    margin-top: 6vh;
+}
+
+nav li {
+	background-color: #194d69;
+	border-radius: 10vh;
+	display: inline;
+	font-size: 20px; 
+	margin: 2vh;
+	padding: 1vh 2vh;
+}
+
+nav a { 
+	color: #FCFAF9; 
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.home-body {
+    display: block;
+    text-align: center;
 }
 
 /* Style for Tech Hero Image */
