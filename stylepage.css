@@ -1,17 +1,32 @@
+/* General Page Styling */
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: large;
     margin: 0;
     padding: 0;
     background: #171926;
     color: white;
+    transition: background 0.3s ease-in-out;
 }
 
+/* Header Styling */
 header {
     background: url('image/banner.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* Subtle Overlay on Header */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
@@ -20,38 +35,100 @@ header h1 {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-
+/* Navigation Bar */
 nav {
     text-align: center;
-    margin-top: 6vh;
+    margin-top: 5vh;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
 nav li {
-	background-color: #194d69;
-	border-radius: 10vh;
-	display: inline;
-	font-size: 20px; 
-	margin: 2vh;
-	padding: 1vh 2vh;
+    background-color: #194d69;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px;
+    padding: 12px 20px;
+    transition: all 0.3s ease-in-out;
 }
 
-nav a { 
-	color: #FCFAF9; 
-	text-decoration: none;
+nav li:hover {
+    background-color: #1c6b8d;
+    transform: scale(1.1);
 }
 
+nav a {
+    color: #FCFAF9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffdd57;
+}
+
+/* General Headings */
 h1, h2, h3 {
     text-align: center;
 }
 
-.home-body {
-    display: block;
-    text-align: center;
+/* Main Content Styling */
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Style for Tech Hero Image */
+p {
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Hover Effects for Sections */
+section:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Interactive Expanding Content */
+.expandable {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffdd57;
+    text-align: center;
+    margin-top: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.expandable:hover {
+    color: #e6b800;
+}
+
+.hidden-content {
+    display: none;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.expandable:active + .hidden-content {
+    display: block;
+}
+
+/* Tech Hero Image */
 .hero-image {
     width: 100%;
     max-width: 400px;
@@ -59,5 +136,59 @@ h1, h2, h3 {
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #e6b800;
+}
+
+/* Button Styles */
+button {
+    background-color: #ffdd57;
+    color: black;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
