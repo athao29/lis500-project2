@@ -24,20 +24,43 @@
         <section>
             <h2>Meet the Team</h2>
             <p>We are a group of students passionate about technology, equity, and social justice. Our goal with this project is to explore the impact of implicit bias and highlight diverse voices in tech.</p>
-            
-            <div class="team-member">
-                <h3>Darwish Rahim</h3>
-                <p>Darwish is an economics and information science student who is interested in the intersection of technology and society. He enjoys working on projects that challenge existing biases in digital spaces.</p>
-            </div>
 
-            <div class="team-member">
-                <h3>Allyssa Thao</h3>
-                <p>Allyssa is passionate about diversity in tech and ensuring that marginalized voices are included in the conversation. She is particularly interested in the role of AI in shaping narratives.</p>
-            </div>
+            <!-- Team Members Section -->
+            <div class="team-container">
 
-            <div class="team-member">
-                <h3>Chloe Koppel</h3>
-                <p>Chloe is dedicated to exploring ethical considerations in technology. She believes in the power of digital activism and strives to use tech as a tool for equity and change.</p>
+                <!-- Darwish Rahim -->
+                <div class="team-member">
+                    <img src="images/darwish.jpg" alt="Darwish Rahim">
+                    <h3>Darwish Rahim</h3>
+                    <button class="expand-btn">More About Darwish</button>
+                    <div class="member-info">
+                        <p>Darwish is an economics and information science student who is interested in the intersection of technology and society. He enjoys working on projects that challenge existing biases in digital spaces.</p>
+                        <p><strong>Fun Fact:</strong> Loves coding while listening to pop!</p>
+                    </div>
+                </div>
+
+                <!-- Allyssa Thao -->
+                <div class="team-member">
+                    <img src="images/allyssa.jpg" alt="Allyssa Thao">
+                    <h3>Allyssa Thao</h3>
+                    <button class="expand-btn">More About Allyssa</button>
+                    <div class="member-info">
+                        <p>Allyssa is passionate about diversity in tech and ensuring that marginalized voices are included in the conversation. She is particularly interested in the role of AI in shaping narratives.</p>
+                        <p><strong>Fun Fact:</strong> Can name every AI character from sci-fi movies!</p>
+                    </div>
+                </div>
+
+                <!-- Chloe Koppel -->
+                <div class="team-member">
+                    <img src="images/chloe.jpg" alt="Chloe Koppel">
+                    <h3>Chloe Koppel</h3>
+                    <button class="expand-btn">More About Chloe</button>
+                    <div class="member-info">
+                        <p>Chloe is dedicated to exploring ethical considerations in technology. She believes in the power of digital activism and strives to use tech as a tool for equity and change.</p>
+                        <p><strong>Fun Fact:</strong> She loves cat!</p>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
@@ -45,6 +68,16 @@
     <footer>
         <p>&copy; 2024 Our Project Team</p>
     </footer>
+
+    <script>
+        // Interactive expand/collapse for each team member
+        document.querySelectorAll(".expand-btn").forEach(button => {
+            button.addEventListener("click", function() {
+                let info = this.nextElementSibling;
+                info.style.display = (info.style.display === "block") ? "none" : "block";
+            });
+        });
+    </script>
+
 </body>
 </html>
-
