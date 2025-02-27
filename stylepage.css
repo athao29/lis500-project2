@@ -8,16 +8,19 @@ body {
     color: white;
     transition: background 0.3s ease-in-out;
 }
-/* Header Styling */
+/* HEADER SECTION WITH BACKGROUND IMAGE */
 header {
-    background: url('image/banner.jpg') no-repeat center center/cover;
-    color: white;
+    background: url('images/banner.jpg') no-repeat center center/cover; /* Set as background */
+    height: 90vh; /* Adjust height for full visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 80px 20px;
+    color: white;
     position: relative;
 }
 
-/* Subtle Overlay on Header */
+/* Dark overlay for better text readability */
 header::before {
     content: "";
     position: absolute;
@@ -25,18 +28,16 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6); /* Adds a dark overlay */
 }
 
+/* Header title (Home) styling */
 header h1 {
-    font-size: 2.5em;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
+    font-size: 3rem;
     position: relative;
     z-index: 2;
-    animation: fadeIn 1.5s ease-in-out;
 }
+
 
 /* NAVIGATION BAR */
 nav {
