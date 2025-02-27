@@ -141,11 +141,16 @@ p {
 
 /* MAKES LINKS MORE NOTICEABLE */
 .ext-link {
-    color: black;
     background: aquamarine;
+    color: black;
     border-radius: 5px;
     text-decoration: none;
     padding: 5px 10px;
+}
+
+.ext-link:hover {
+    background: #ff6b6b;
+    color: #ffdd57;
 }
 
 .home-content { 
@@ -186,15 +191,15 @@ section:hover {
     display: block;
 }
 
-/* Team Section Styling */
+/* TEAM SECTION STYLING */
 .team-container {
+    color: black;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-    padding: 20px;
+    size: medium;
 }
-
 
 .team-member {
     text-align: center;
