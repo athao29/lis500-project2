@@ -10,11 +10,13 @@
     
     <header>
         <h1>About Us</h1>
+        <!-- Hamburger Menu for Mobile -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div> 
         <nav>
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="resource.html">Implicit Bias Resources</a></li>
+                <li><a href="resources.html">Implicit Bias Resources</a></li>
                 <li><a href="techhero.html">Tech Hero</a></li>
             </ul>
         </nav>
@@ -58,8 +60,14 @@
         <p>&copy; 2024 Our Project Team</p>
     </footer>
 
+    <!-- JavaScript for Interactive Features -->
     <script>
-        // Interactive expand/collapse for each team member
+        function toggleMenu() {
+            let nav = document.querySelector(".nav-list");
+            nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+        }
+
+        // Expandable team member info
         document.querySelectorAll(".expand-btn").forEach(button => {
             button.addEventListener("click", function() {
                 let info = this.nextElementSibling;
