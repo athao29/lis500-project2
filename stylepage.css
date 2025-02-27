@@ -265,3 +265,7 @@ button:hover {
         transform: translateY(0);
     }
 }
+
+.ext-link {
+    color: aqua;
+}
