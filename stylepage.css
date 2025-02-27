@@ -40,41 +40,81 @@ header h1 {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Navigation Bar */
+/* NAVIGATION BAR */
 nav {
-    text-align: center;
-    margin-top: 5vh;
+    background: #222;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-nav ul {
+.nav-list {
     list-style: none;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    margin: 0;
 }
 
-nav li {
-    background-color: #194d69;
-    border-radius: 50px;
+.nav-list li {
     display: inline-block;
-    font-size: 20px;
-    margin: 10px;
-    padding: 12px 20px;
+    padding: 10px 20px;
     transition: all 0.3s ease-in-out;
 }
 
-nav li:hover {
-    background-color: #1c6b8d;
-    transform: scale(1.1);
+.nav-list li:hover {
+    background: #ff6b6b;
+    border-radius: 5px;
+    transform: scale(1.05);
 }
 
-nav a {
+.nav-list li a {
     color: #FCFAF9;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
 
-nav a:hover {
+.nav-list li a:hover {
     color: #ffdd57;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px;
+    }
+
+    .nav-list li {
+        text-align: center;
+        padding: 10px;
+    }
 }
 
 /* General Headings */
@@ -136,6 +176,7 @@ section:hover {
     gap: 30px;
     padding: 20px;
 }
+
 
 .team-member {
     text-align: center;
