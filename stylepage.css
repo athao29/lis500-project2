@@ -1,6 +1,6 @@
 /* GENERAL PAGE STYLING */
 body {
-    font-family: 'Gotham','Verdana', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
     background: #373947;
@@ -250,17 +250,6 @@ footer {
     padding: 15px;
     position: relative;
     margin-top: 40px;
-}
-
-footer a {
-    color: #ffdd57;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-
-footer a:hover {
-    color: #e6b800;
 }
 
 /* Animations */
