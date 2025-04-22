@@ -1,10 +1,9 @@
 /* GENERAL PAGE STYLING */
 body {
     font-family: 'Gotham','Verdana', sans-serif;
-    font-size: large;
     margin: 0;
     padding: 0;
-    background: #171926;
+    background: #373947;
     color: white;
     transition: background 0.3s ease-in-out;
 }
@@ -52,6 +51,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -71,20 +71,20 @@ nav {
 }
 
 .nav-list li:hover {
-    background: #ff6b6b;
+    background: #ff5f5f;
     border-radius: 5px;
     transform: scale(1.05);
 }
 
 .nav-list li a {
-    color: #FCFAF9;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
 
 .nav-list li a:hover {
-    color: #ffdd57;
+    color: #ffffff;
 }
 
 /* HAMBURGER MENU */
@@ -129,6 +129,7 @@ h1, h2, h3 {
 /* MAIN CONTENT STYLING */
 section {
     max-width: 900px;
+    max-width: 60%;
     margin: 40px auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -137,26 +138,33 @@ section {
     animation: fadeIn 1s ease-in-out;
 }
 
+/* HOVER EFFECTS FOR SECTIONS */
+section:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
 p {
     line-height: 1.6;
-    font-size: 18px;
+    font-size: 15px;
     padding-left: 40px;
     padding-right: 40px;
 }
 
 /* MAKES LINKS MORE NOTICEABLE */
 .ext-link {
-    background: aquamarine;
-    color: black;
+    background: #5f7aff;
+    color: #0b0c17;
     border-radius: 5px;
     text-decoration: none;
     padding: 5px 10px;
     line-height: 2;
+    font-weight: bold;
 }
 
 .ext-link:hover {
-    background: #ff6b6b;
-    color: #ffdd57;
+    background: #ff5f5f;
+    color: #ffffff;
 }
 
 .home-content { 
@@ -165,12 +173,6 @@ p {
 
 .interactive-cards {
     display: flex;
-}
-
-/* HOVER EFFECTS FOR SECTIONS */
-section:hover {
-    transform: scale(1.02);
-    transition: all 0.3s ease-in-out;
 }
 
 /* INTERACTIVE EXPANDING CONTENT */
@@ -211,7 +213,7 @@ section:hover {
     text-align: center;
     background: white;
     padding: 20px;
-    width: 300px;
+    width: 400px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
@@ -261,27 +263,6 @@ footer a:hover {
     color: #e6b800;
 }
 
-/* Button Styles */
-button {
-    background-color: #ffdd57;
-    color: black;
-    background-color: #ffdd57; /* Keep the yellow background */
-    color: #222; /* Dark color for better contrast */
-    font-size: 18px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #e6b800;
-    background-color: #e6b800; /* Slightly darker yellow */
-    transform: scale(1.05);
-}
-
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -323,4 +304,50 @@ button:hover {
     height: 315px;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ANCHOR NAVIGATION BAR */
+.anchor-nav {
+    background: #373737;
+    width: 100%;
+    top: 65px; 
+    z-index: 1;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.anchor-nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.anchor-nav-list li {
+    padding: 8px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.anchor-nav-list li:hover {
+    background-color: #ff6b6b;
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+.anchor-nav-list li a {
+    color: #FCFAF9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.anchor-nav-list li a:hover {
+    color: #ffdd57;
 }
