@@ -41,29 +41,100 @@
     <!-- GROUP PROJECT STATEMENT -->
     <section id="project-statement">
       <h2>Project Statement – Mood Classifier</h2>
-      <p>Our group developed a machine learning model using Google’s Teachable Machine to classify human moods based on facial expressions. We decided to focus on three core emotional states—Happy, Tired, and Angry—because they are easily recognizable, yet still present enough complexity to challenge a machine learning system. Our goal was to explore the technical process of building a classifier and reflect on the ethical implications of emotion recognition in AI systems, especially in light of the insights shared in Joy Buolamwini’s <em>Unmasking AI</em>.</p>
-
-      <p>The technical process began with the collection of training data. Each group member recorded webcam footage of themselves displaying each emotion and extracted individual frames to create image datasets. We made sure to take samples under different lighting conditions, facial angles, and with and without accessories like glasses to diversify the input data. This dataset was then uploaded into Teachable Machine, where the model was trained using transfer learning based on a pre-trained MobileNet model. Once training was complete, we exported the model and embedded it into a webpage using TensorFlow.js and ml5.js libraries.</p>
-
-      <p>The classifier works by analyzing live video from the user’s webcam and predicting which of the three emotional states the user is most likely expressing. It provides real-time feedback, offering an engaging demonstration of how facial recognition-based emotion classification operates. From a purely technical standpoint, the project was successful—we created a model that can functionally distinguish between the moods in most cases. But as we quickly learned, the real story lies in its limitations, and that’s where Buolamwini’s book became central to our reflection.</p>
-
-      <p>One of the major lessons from <em>Unmasking AI</em> is that data is never neutral. Every training set reflects the choices, biases, and blind spots of the people who create it. In our project, we saw this clearly: despite our best efforts to create a balanced dataset, the model sometimes misclassified expressions when the user had darker lighting, different facial features, or wore glasses. This revealed how easily unintended bias can creep in. If we, a small student group, could see these issues so clearly, it’s easy to imagine how much more damaging these biases could be in large-scale commercial facial recognition systems.</p>
-
-      <p>Buolamwini’s research with the Gender Shades project showed that major commercial facial analysis systems consistently underperformed for women and people with darker skin tones. This was due to underrepresentation in the training data and design choices that failed to consider diversity. Although our project was on a smaller scale, it echoed this pattern. When we tested our model with users outside our group—especially those with different skin tones or who didn’t fit into the training data archetypes—it struggled to accurately classify their emotions. This underscored the importance of diverse and representative data, a principle that is easy to overlook when technical success becomes the main focus.</p>
-
-      <p>Another concept that resonated with us from the book was the idea of algorithmic accountability. In the rush to innovate and deploy AI solutions, ethical considerations often fall by the wayside. But as Buolamwini emphasizes, technology is not just a tool—it’s a mirror of societal values and structures. When an AI system makes a decision—whether it’s tagging someone as angry, denying them a job, or flagging them as a security threat—it inherits all the biases and limitations of the humans who created it. In our case, even a misclassification of emotion could be frustrating or confusing to users. But in real-world applications, such errors could have serious consequences—think of AI being used in hiring, law enforcement, or mental health diagnosis.</p>
-
-      <p>Through this project, we also confronted the concept of “ground truth.” In machine learning, ground truth refers to the correct label or output that the model should learn. But when dealing with emotions, ground truth becomes incredibly subjective. What does it mean to look tired? Is a smile always a sign of happiness, or can it mask other emotions? Our model had to rely on surface-level indicators—mouth curves, eye openness, posture—but it couldn’t understand context, intent, or culture. This limitation reflects a larger issue with AI systems that attempt to read complex human behaviors without truly understanding them.</p>
-
-      <p>The more we worked on this project, the more we realized how intertwined technical design is with social context. We learned that building an effective model isn't just about data and accuracy—it’s also about values, inclusivity, and transparency. For instance, we discussed whether it would be appropriate to share this model publicly or if doing so might perpetuate false assumptions about emotion detection. We concluded that if a model like this were ever to be deployed, it would need constant monitoring, user feedback, and clear disclaimers about its limitations.</p>
-
-      <p>One surprising takeaway was how much of AI’s perceived intelligence is really just pattern recognition. Our model doesn’t understand emotions—it just learns to recognize patterns associated with certain facial configurations. Yet, users might interpret its results as meaningful or definitive. This disconnect can lead to what Buolamwini calls the “authority of the algorithm,” where people place undue trust in machine predictions simply because they appear objective or data-driven.</p>
-
-      <p>In terms of the group dynamic, this project also showed the importance of collaboration in ethical tech development. Each team member brought different perspectives—some more focused on technical implementation, others more on social impact—and this balance helped shape a more thoughtful approach. We had several discussions about how our identities and experiences influenced how we interpreted emotions and built the dataset. That reflection process itself felt just as valuable as writing any line of code.</p>
-
-      <p>Ultimately, this project reminded us that AI is a human product—it reflects our choices, our assumptions, and our limitations. It can amplify existing inequalities if left unchecked, but it also holds the potential for good if designed with care and inclusivity. Tools like Teachable Machine democratize AI development, which is great, but they also make it easier for people to deploy flawed or biased models without realizing the consequences. As future developers, designers, or policy-makers, we feel a responsibility to carry the lessons from this project into any future work involving AI.</p>
-
-      <p>To conclude, the process of building this mood classifier taught us far more than just how to use Teachable Machine or embed JavaScript. It was a crash course in the ethics of technology, the dangers of assuming objectivity, and the real-world consequences of biased systems. Buolamwini’s call for algorithmic justice isn’t just theoretical—it’s deeply practical and urgent. Even in our small-scale project, we saw firsthand how easy it is to replicate bias and how important it is to reflect critically on the tools we create. We hope that by sharing our process and being transparent about its strengths and flaws, we’re contributing—if even a little—to a more ethical and inclusive tech future.</p>
+        <p>
+          For this project, our team (Allyssa and Darwish) created a machine learning model using Google’s Teachable Machine to classify human emotions—specifically Happy, Tired, and Angry. 
+          These three emotions were chosen because they are simple to embody while remaining complex enough to fool an algorithm. 
+          In addition to making the classifier function, our primary objective was to critically examine how AI models perceive human emotions, particularly in light of Joy Buolamwini's <em>Unmasking AI</em>. 
+          Reading Parts 4 to 6 while doing this assignment really opened our eyes to how messy and biased AI systems can be—sometimes in ways we don’t even realize until we’re the ones building them.
+        </p>
+        <p>
+          First, we gathered training data. 
+          We all recorded ourselves imitating the three emotions on our webcams. 
+          After that, we extracted still photos with various lighting conditions, facial angles, and even other variations like spectacles. 
+          After uploading those photos to Teachable Machine, we used the included MobileNet to train the model. 
+          Following several iterations of testing, we exported it and used TensorFlow.js and ml5.js to put it into a website. 
+          Watching the algorithm predict our mood in real time was sort of bizarre; it was almost magical, until it didn't work out so well.
+        </p>
+        <p>
+          And that’s where things got interesting.
+        </p>
+        <p>
+          Despite the classifier's "technical" operation, we soon discovered its shortcomings. 
+          Sometimes it would call someone “happy” when they were clearly tired, or confused a resting face for anger. 
+          We initially believed it to be the model's fault. 
+          However, it all made perfect sense after reading Part 4 of <em>Unmasking AI</em>, particularly when Buolamwini discusses the Mirage of Neutrality. 
+          Data is never unbiased. 
+          The choices we made about our lighting, who we included, and how we posed were all mirrored in our model. 
+          It went beyond simply identifying patterns. 
+          Even when we didn't want to incorporate them, it was perpetuating our own prejudices.
+        </p>
+        <p>
+          Our team found Buolamwini's concept of the coded gaze to be rather memorable. 
+          She describes how the beliefs and viewpoints of individuals who create AI are reflected in it. 
+          We witnessed this personally. 
+          People who looked like us and lived in settings we were familiar with provided the majority of our training data.
+           However, the model occasionally misclassified people who weren't in our group, particularly those with differing skin tones or facial traits. 
+          It served as a sort of reality check. 
+          If a fun classroom project could reflect bias that clearly, how much worse could it be when these systems are used at scale?
+        </p>
+        <p>
+          In Part 5, Buolamwini discusses her Gender Shades study, in which she demonstrated how commercial facial analysis algorithms tend to fail Black women. 
+          That struck a deep chord with our experience of testing. 
+          Despite its simplicity, our model had indications of the same issue: it had trouble identifying faces that weren't in the training set. 
+          At that point, we understood that "working well" did not equate to "working fairly." 
+          Equity is not the same as accuracy.
+        </p>
+        <p>
+          The concept of frictionless surveillance was one that truly got us wondering. 
+          Buolamwini cautions about systems that appear beneficial but are actually secretly monitoring, calculating, and making judgments. 
+          Although it wasn't the purpose of our model, it got us thinking: what if workplaces or schools adopted something similar? 
+          Someone's behavior may suffer if the classifier categorizes them as "angry" based just on their serious resting face. 
+          We were reminded by Buolamwini's criticism that AI can influence reality in addition to describing it. 
+          It must be held responsible for the power it possesses.          
+        </p>
+        <p>
+          The concept of ground truth taught us another important lesson. 
+          This label—the "correct" response—is what the machine learning model learns from. 
+          But when it comes to mood, what really is the right term? 
+          A person is not necessarily happy just because they smile. 
+          Everyone's definition of fatigue is different. 
+          We came to see that we were using our presumptions to train the model rather than the objective facts. 
+          That's a dangerous starting point. 
+          Treating subjective data as objective can have major negative effects, as Buolamwini notes, particularly if the results are perceived as "just science."
+        </p>
+        <p>
+          In part 6, when Buolamwini urged people to oppose dangerous technology, our perspectives on our entire mission changed. 
+          She discusses algorithmic resistance, which is the act of opposing tools that do not benefit everyone equitably. 
+          That got us thinking: Why are we doing this? Is this only a neat demonstration, or are we utilizing it to learn how to create more inclusive, considerate systems? 
+          We considered how we were developing the model and if it was moral to distribute it widely after being asked that question. 
+          We ultimately decided that if this were ever made public outside of the classroom, it should be accompanied by a concise description of its context and limits. 
+          We didn't want people to take it too seriously and think that deep comprehension is the same as pattern recognition.
+        </p>
+        <p>
+          One thing that shocked us was how much people trusted the model. 
+          People frequently just accepted being called "happy" even when they weren't. 
+          This is what Buolamwini refers to as the algorithm's authority, and it is true. 
+          Even when technology is flawed, people still trust it. 
+          Given how subjective emotion detection is already, such a type of naive confidence can be harmful.
+        </p>
+        <p>
+          We learned the significance of diverse viewpoints while working on this project. 
+          Our group disagreed on how to pose for "angry" or what "tired" should seem like. 
+          These distinctions generated fascinating discussions about the model as well as how our identities affect how we engage with AI. 
+          We believe Buolamwini would agree that examining not just what we're creating, but also who we are in the process, is a necessary step.
+        </p>
+        <p>
+          By the end of the project, our team had a better understanding of how technical tools might represent societal challenges. 
+          Buolamwini's reminder that AI is a human creation, influenced by our decisions, constraints, and presumptions, struck a deep chord. 
+          We had control over how we gathered data, tested it, and explained what it could and could not do, even though we were using a pre-built platform like Teachable Machine.
+        </p>
+        <p>
+          "You are not powerless" was one statement from Part 6 that truly stuck with us. 
+          It is always possible to resist. 
+          It served as a reminder that we are not only passive consumers of technology, but rather creators with the power to influence the future. 
+          Training a classifier wasn't the only goal of this endeavor. 
+          It focused on developing critical thinking skills regarding what we construct, why we build it, and who could be impacted.
+        </p>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
